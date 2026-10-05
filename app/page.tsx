@@ -26,37 +26,30 @@ const socialLinks = [
   ["Vivino", "https://www.vivino.com/users/wanderingwinecompany"],
 ] as const;
 
-function WWCLogo({ compact = false }: { compact?: boolean }) {
+function CircleLogo({ compact = false }: { compact?: boolean }) {
   return (
     <svg
-      className={compact ? "wwc-logo wwc-logo-compact" : "wwc-logo"}
-      viewBox="0 0 440 190"
+      className={compact ? "circle-logo circle-logo-compact" : "circle-logo"}
+      viewBox="0 0 200 200"
       role="img"
       aria-label="Wandering Wine Co."
     >
-      <rect x="8" y="8" width="424" height="174" rx="28" fill="none" stroke="currentColor" strokeWidth="5" />
+      <circle cx="100" cy="100" r="94" fill="none" stroke="currentColor" strokeWidth="4" />
       <path
-        d="M82 77V39h52v16h47l30-27 57 52 26-24h71v22h25v31h-96v-16h-92l-27 20H95c-9 0-16-7-16-16 0-8 1-14 3-20Z"
+        d="M88 37h24v28l9 11v78c0 7-6 13-13 13H92c-7 0-13-6-13-13V76l9-11V37Z"
         fill="none"
         stroke="currentColor"
-        strokeWidth="7"
-        strokeLinecap="round"
+        strokeWidth="6"
         strokeLinejoin="round"
       />
       <path
-        d="m82 77 35-29 36 29 56-51 60 54 26-24"
+        d="m80 92 21-20 20 20M80 122l16-15 23 22-17 16 14 14"
         fill="none"
         stroke="currentColor"
-        strokeWidth="7"
+        strokeWidth="6"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <path d="M95 102h62M122 118h68M181 102h54M210 118h69" stroke="currentColor" strokeWidth="7" strokeLinecap="round" />
-      {!compact && (
-        <text x="220" y="160" textAnchor="middle" className="logo-text">
-          WANDERING WINE CO.
-        </text>
-      )}
     </svg>
   );
 }
@@ -66,7 +59,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a href="#top" className="brand" aria-label="Wandering Wine Co. home">
-          <WWCLogo compact />
+          <CircleLogo compact />
           <span>Wandering Wine Co.</span>
         </a>
         <nav aria-label="Primary navigation">
@@ -78,7 +71,6 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-statement">
-          <p className="eyebrow">San Antonio, Texas</p>
           <h1>
             WWC brought San Antonio restaurants, wine professionals, and guests
             together around bottles worth trying.
@@ -86,7 +78,8 @@ export default function Home() {
         </div>
 
         <div className="hero-brand">
-          <WWCLogo />
+          <p className="location">San Antonio, Texas</p>
+          <CircleLogo />
           <div className="hero-socials">
             {socialLinks.map(([label, href]) => (
               <a href={href} target="_blank" rel="noreferrer" key={label}>
