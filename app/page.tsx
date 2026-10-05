@@ -19,6 +19,13 @@ const events = [
   },
 ];
 
+const socialLinks = [
+  ["Instagram", "https://www.instagram.com/wanderingwinecompany/"],
+  ["Facebook", "https://www.facebook.com/WanderingWineCompany"],
+  ["LinkedIn", "https://www.linkedin.com/company/wanderingwinecompany"],
+  ["Vivino", "https://www.vivino.com/users/wanderingwinecompany"],
+] as const;
+
 function WWCLogo({ compact = false }: { compact?: boolean }) {
   return (
     <svg
@@ -63,44 +70,37 @@ export default function Home() {
           <span>Wandering Wine Co.</span>
         </a>
         <nav aria-label="Primary navigation">
+          <a href="#events">Large-scale events</a>
           <a href="#about">About</a>
-          <a href="#events">Past events</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
 
       <section className="hero" id="top">
-        <div className="hero-main">
-          <h1>Wine.<br />Food.<br />People.</h1>
-          <p className="location">San Antonio, Texas</p>
-        </div>
-
-        <div className="hero-side">
-          <WWCLogo />
-          <p className="hero-line">Good bottles and curious people.</p>
-          <span>#uncorksomethingnew</span>
-        </div>
-      </section>
-
-      <section className="about" id="about">
-        <p className="eyebrow">Wandering Wine Co.</p>
-        <div className="about-grid">
-          <p className="lead">
+        <div className="hero-statement">
+          <p className="eyebrow">San Antonio, Texas</p>
+          <h1>
             WWC brought San Antonio restaurants, wine professionals, and guests
             together around bottles worth trying.
-          </p>
+          </h1>
+        </div>
 
-          <div className="copy">
-            <p>There is plenty to know about wine.</p>
-            <p>And an unreasonable amount of vocabulary.</p>
-            <p>It matters. It just does not have to get between you and a glass you like.</p>
+        <div className="hero-brand">
+          <WWCLogo />
+          <div className="hero-socials">
+            {socialLinks.map(([label, href]) => (
+              <a href={href} target="_blank" rel="noreferrer" key={label}>
+                {label}
+              </a>
+            ))}
           </div>
+          <span>#uncorksomethingnew</span>
         </div>
       </section>
 
       <section className="events" id="events">
         <div className="events-heading">
-          <p className="eyebrow">Past events</p>
+          <p className="eyebrow">Large-scale events</p>
         </div>
 
         <div className="event-grid">
@@ -120,24 +120,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="contact" id="contact">
-        <div>
-          <p className="eyebrow">Contact</p>
-          <h2>Found your way here?</h2>
-          <p className="hi">Hi.</p>
+      <section className="about" id="about">
+        <div className="about-grid">
+          <p className="lead">Good bottles and curious people.</p>
+
+          <div className="copy">
+            <p>There is plenty to know about wine.</p>
+            <p>And an unreasonable amount of vocabulary.</p>
+            <p>It matters. It just does not have to get between you and a glass you like.</p>
+          </div>
         </div>
+      </section>
+
+      <section className="contact" id="contact">
+        <p className="contact-title">Contact</p>
 
         <div className="contact-copy">
           <a className="email" href="mailto:wanderingwinecompany@gmail.com">
             wanderingwinecompany@gmail.com
           </a>
-
-          <div className="socials">
-            <a href="https://www.instagram.com/wanderingwinecompany/" target="_blank" rel="noreferrer">Instagram</a>
-            <a href="https://www.facebook.com/WanderingWineCompany" target="_blank" rel="noreferrer">Facebook</a>
-            <a href="https://www.linkedin.com/company/wanderingwinecompany" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="https://www.vivino.com/users/wanderingwinecompany" target="_blank" rel="noreferrer">Vivino</a>
-          </div>
         </div>
       </section>
 
