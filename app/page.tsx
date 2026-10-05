@@ -4,24 +4,18 @@ const events = [
     date: "FEB 16 · 2024",
     title: "Kick-Off with Chronic Cellars",
     place: "Dignowity Meats",
-    meta: "Paso Robles · Wine tasting · Food · Live music",
-    note: "The first WWC event: Chronic Cellars, Dignowity Meats, and a room full of people willing to see where this went.",
   },
   {
     key: "summer",
     date: "JUN 23 · 2024",
     title: "Summer Sips",
-    place: "Vista Brewing San Antonio · Soto Vino",
-    meta: "Texas wine · French sparkle · Paired dinner",
-    note: "Soto Vino wines, a sparkling reception, and a paired family-style dinner. It sold out.",
+    place: "Vista Brewing · Soto Vino",
   },
   {
     key: "vivo",
     date: "OCT 13 · 2024",
     title: "Vivo Vino",
     place: "Leche de Tigre",
-    meta: "Spain + South America · Peruvian food",
-    note: "Spanish and South American wines with Peruvian food. Pretty straightforward. Pretty good idea.",
   },
 ];
 
@@ -70,52 +64,43 @@ export default function Home() {
         </a>
         <nav aria-label="Primary navigation">
           <a href="#about">About</a>
-          <a href="#events">Events</a>
+          <a href="#events">Past events</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
 
       <section className="hero" id="top">
         <div className="hero-main">
-          <p className="eyebrow">San Antonio, Texas</p>
           <h1>Wine.<br />Food.<br />People.</h1>
-          <p className="aside">Usually in that order. Sometimes not.</p>
+          <p className="location">San Antonio, Texas</p>
         </div>
 
-        <div className="hero-brand">
+        <div className="hero-side">
           <WWCLogo />
-          <p>
-            Wandering Wine Co. started as a way to put good bottles, good food,
-            and curious people in the same room.
-          </p>
+          <p className="hero-line">Good bottles and curious people.</p>
           <span>#uncorksomethingnew</span>
         </div>
       </section>
 
       <section className="about" id="about">
-        <p className="eyebrow">The idea</p>
+        <p className="eyebrow">Wandering Wine Co.</p>
         <div className="about-grid">
-          <h2>Good wine without making it weird.</h2>
+          <p className="lead">
+            WWC brought San Antonio restaurants, wine professionals, and guests
+            together around bottles worth trying.
+          </p>
+
           <div className="copy">
-            <p>
-              WWC brought San Antonio restaurants, wine professionals, and guests
-              together around bottles worth trying.
-            </p>
-            <p>
-              There is plenty to know about wine. Regions. Grapes. Weather.
-              Chemistry. History. An unreasonable amount of vocabulary.
-            </p>
-            <p>
-              It matters. It just does not have to get between you and a glass you like.
-            </p>
+            <p>There is plenty to know about wine.</p>
+            <p>And an unreasonable amount of vocabulary.</p>
+            <p>It matters. It just does not have to get between you and a glass you like.</p>
           </div>
         </div>
       </section>
 
       <section className="events" id="events">
         <div className="events-heading">
-          <p className="eyebrow">A few things we did</p>
-          <h2>Three nights.<br />Different bottles.</h2>
+          <p className="eyebrow">Past events</p>
         </div>
 
         <div className="event-grid">
@@ -125,11 +110,10 @@ export default function Home() {
                 <span>{event.date}</span>
                 <span>WWC</span>
               </div>
+
               <div className="event-copy">
-                <p className="event-meta">{event.meta}</p>
-                <h3>{event.title}</h3>
-                <p className="event-place">{event.place}</p>
-                <p className="event-note">{event.note}</p>
+                <h2>{event.title}</h2>
+                <p>{event.place}</p>
               </div>
             </article>
           ))}
@@ -139,16 +123,15 @@ export default function Home() {
       <section className="contact" id="contact">
         <div>
           <p className="eyebrow">Contact</p>
-          <h2>Still here.</h2>
+          <h2>Found your way here?</h2>
+          <p className="hi">Hi.</p>
         </div>
+
         <div className="contact-copy">
-          <p>
-            Found your way here from an old event, Yelp, a wine review, or a very
-            determined Google search? Hi.
-          </p>
           <a className="email" href="mailto:wanderingwinecompany@gmail.com">
             wanderingwinecompany@gmail.com
           </a>
+
           <div className="socials">
             <a href="https://www.instagram.com/wanderingwinecompany/" target="_blank" rel="noreferrer">Instagram</a>
             <a href="https://www.facebook.com/WanderingWineCompany" target="_blank" rel="noreferrer">Facebook</a>
