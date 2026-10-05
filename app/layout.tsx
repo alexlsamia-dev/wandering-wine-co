@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Wandering Wine Co. | San Antonio",
   description:
-    "Curated wine and beverage experiences connecting San Antonio hospitality, producers, and curious guests.",
+    "Wandering Wine Co. — wine, food, and discovery in San Antonio, Texas.",
 };
 
 export default function RootLayout({
