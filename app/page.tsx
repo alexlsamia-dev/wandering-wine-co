@@ -21,8 +21,7 @@ const events = [
 
 const socialLinks = [
   ["Instagram", "https://www.instagram.com/wanderingwinecompany/"],
-  ["Facebook", "https://www.facebook.com/WanderingWineCompany"],
-  ["LinkedIn", "https://www.linkedin.com/company/wanderingwinecompany"],
+  ["Yelp", "https://www.yelp.com/biz/wandering-wine-co-san-antonio"],
   ["Vivino", "https://www.vivino.com/users/wanderingwinecompany"],
 ] as const;
 
@@ -72,8 +71,8 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-statement">
           <h1>
-            WWC brought San Antonio restaurants, wine professionals, and guests
-            together around bottles worth trying.
+            San Antonio restaurants, wine professionals, and guests together with
+            bottles worth trying.
           </h1>
         </div>
 
