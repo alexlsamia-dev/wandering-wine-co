@@ -42,9 +42,9 @@ main { min-height: 100vh; }
   font-size: 17px;
 }
 
-.brand .wwc-logo {
-  width: 57px;
-  height: 43px;
+.brand .circle-logo {
+  width: 42px;
+  height: 42px;
 }
 
 nav {
@@ -61,23 +61,16 @@ nav a,
   text-decoration: none;
 }
 
-.wwc-logo {
+.circle-logo {
   display: block;
-  width: min(470px, 100%);
+  width: min(280px, 72%);
   height: auto;
-}
-
-.logo-text {
-  font-family: "Bebas Neue", "Arial Narrow", sans-serif;
-  font-size: 32px;
-  letter-spacing: 1px;
-  fill: currentColor;
 }
 
 .hero {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
-  min-height: 560px;
+  min-height: 540px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -88,8 +81,32 @@ nav a,
   padding: clamp(56px, 7vw, 90px) clamp(25px, 7vw, 105px);
 }
 
+.hero-statement h1 {
+  margin: 0;
+  max-width: 760px;
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-size: clamp(28px, 3.2vw, 48px);
+  line-height: 1.14;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  text-transform: none;
+}
+
+.hero-brand {
+  padding: clamp(44px, 5vw, 68px);
+  background: var(--brown);
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  text-align: center;
+}
+
+.location,
 .eyebrow {
-  margin: 0 0 18px;
+  margin: 0;
   font-family: "Roboto Condensed", Arial, sans-serif;
   font-size: 11px;
   font-weight: 600;
@@ -97,32 +114,13 @@ nav a,
   text-transform: uppercase;
 }
 
-.hero-statement h1 {
-  margin: 0;
-  max-width: 760px;
-  font-family: "Roboto Condensed", Arial, sans-serif;
-  font-size: clamp(36px, 4.7vw, 70px);
-  line-height: 1.02;
-  font-weight: 500;
-  letter-spacing: -0.035em;
-  text-transform: none;
-}
-
-.hero-brand {
-  padding: clamp(48px, 6vw, 76px);
-  background: var(--brown);
-  color: var(--cream);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 24px;
-}
-
 .hero-socials {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 14px 24px;
-  opacity: 0.88;
+  width: 100%;
+  opacity: 0.9;
 }
 
 .hero-brand > span {
@@ -235,10 +233,11 @@ nav a,
 .lead {
   margin: 0;
   max-width: 620px;
-  font-family: "Roboto Condensed", Arial, sans-serif;
-  font-size: clamp(34px, 4.2vw, 58px);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  font-family: "Bebas Neue", "Arial Narrow", sans-serif;
+  font-size: clamp(56px, 7vw, 96px);
+  line-height: 0.9;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
 }
 
 .copy {
@@ -254,8 +253,8 @@ nav a,
 }
 
 .contact {
-  padding-top: clamp(52px, 5vw, 72px);
-  padding-bottom: clamp(52px, 5vw, 72px);
+  padding-top: clamp(48px, 5vw, 66px);
+  padding-bottom: clamp(48px, 5vw, 66px);
   background: var(--brown);
   color: var(--cream);
   display: grid;
@@ -266,9 +265,10 @@ nav a,
 
 .contact-title {
   margin: 0;
-  font-family: "Bebas Neue", "Arial Narrow", sans-serif;
-  font-size: clamp(52px, 6vw, 82px);
-  line-height: 0.9;
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
@@ -300,7 +300,7 @@ footer {
 @media (max-width: 900px) {
   nav { display: none; }
   .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-statement { min-height: 440px; }
+  .hero-statement { min-height: 380px; }
   .hero-brand { min-height: 390px; }
   .event-grid { grid-template-columns: 1fr; }
   .event-card { min-height: 360px; }
@@ -310,7 +310,8 @@ footer {
 
 @media (max-width: 560px) {
   .brand > span { display: none; }
-  .hero-statement h1 { font-size: 38px; }
+  .hero-statement h1 { font-size: 30px; }
+  .lead { font-size: 58px; }
   footer {
     flex-direction: column;
     align-items: flex-start;
