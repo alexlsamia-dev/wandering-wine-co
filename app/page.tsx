@@ -1,56 +1,61 @@
 const events = [
   {
-    year: "2024",
+    key: "chronic",
+    date: "FEB 16 · 2024",
     title: "Kick-Off with Chronic Cellars",
     place: "Dignowity Meats",
-    detail: "Paso Robles wines, barbecue, live music, and the first proper WWC night out.",
+    meta: "Paso Robles · Wine tasting · Food · Live music",
+    note: "The first WWC event: Chronic Cellars, Dignowity Meats, and a room full of people willing to see where this went.",
   },
   {
-    year: "2024",
+    key: "summer",
+    date: "JUN 23 · 2024",
     title: "Summer Sips",
-    place: "Vista Brewing · Soto Vino",
-    detail: "Texas wine, French bubbles, summer food, and a room full of people willing to try something different.",
+    place: "Vista Brewing San Antonio · Soto Vino",
+    meta: "Texas wine · French sparkle · Paired dinner",
+    note: "Soto Vino wines, a sparkling reception, and a paired family-style dinner. It sold out.",
   },
   {
-    year: "2024",
+    key: "vivo",
+    date: "OCT 13 · 2024",
     title: "Vivo Vino",
     place: "Leche de Tigre",
-    detail: "Spanish and South American wines alongside Peruvian food in one of San Antonio's best dining rooms.",
+    meta: "Spain + South America · Peruvian food",
+    note: "Spanish and South American wines with Peruvian food. Pretty straightforward. Pretty good idea.",
   },
 ];
 
-function BottleMark() {
+function WWCLogo({ compact = false }: { compact?: boolean }) {
   return (
     <svg
-      className="bottle-mark"
-      viewBox="0 0 120 160"
+      className={compact ? "wwc-logo wwc-logo-compact" : "wwc-logo"}
+      viewBox="0 0 440 190"
       role="img"
-      aria-label="Wandering Wine Co. bottle mark"
+      aria-label="Wandering Wine Co."
     >
-      <circle cx="60" cy="80" r="54" fill="none" stroke="currentColor" strokeWidth="2.5" />
+      <rect x="8" y="8" width="424" height="174" rx="28" fill="none" stroke="currentColor" strokeWidth="5" />
       <path
-        d="M49 26h22v19l7 8v69c0 7-5 12-12 12H54c-7 0-12-5-12-12V53l7-8V26Z"
+        d="M82 77V39h52v16h47l30-27 57 52 26-24h71v22h25v31h-96v-16h-92l-27 20H95c-9 0-16-7-16-16 0-8 1-14 3-20Z"
         fill="none"
         stroke="currentColor"
-        strokeWidth="3"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M45 73 61 58l17 17"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="3"
+        strokeWidth="7"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
-        d="m45 98 13-12 19 18-14 13 11 11"
+        d="m82 77 35-29 36 29 56-51 60 54 26-24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="3"
+        strokeWidth="7"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+      <path d="M95 102h62M122 118h68M181 102h54M210 118h69" stroke="currentColor" strokeWidth="7" strokeLinecap="round" />
+      {!compact && (
+        <text x="220" y="160" textAnchor="middle" className="logo-text">
+          WANDERING WINE CO.
+        </text>
+      )}
     </svg>
   );
 }
@@ -59,11 +64,10 @@ export default function Home() {
   return (
     <main>
       <header className="site-header">
-        <a href="#top" className="brand-lockup" aria-label="Wandering Wine Co. home">
-          <BottleMark />
+        <a href="#top" className="brand" aria-label="Wandering Wine Co. home">
+          <WWCLogo compact />
           <span>Wandering Wine Co.</span>
         </a>
-
         <nav aria-label="Primary navigation">
           <a href="#about">About</a>
           <a href="#events">Events</a>
@@ -72,119 +76,91 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
-        <div className="hero-copy">
+        <div className="hero-main">
           <p className="eyebrow">San Antonio, Texas</p>
-          <h1>
-            Wine.
-            <br />
-            Food.
-            <br />
-            People.
-          </h1>
-          <p className="hero-note">Usually in that order. Sometimes not.</p>
+          <h1>Wine.<br />Food.<br />People.</h1>
+          <p className="aside">Usually in that order. Sometimes not.</p>
         </div>
 
-        <div className="hero-side">
-          <BottleMark />
-          <p className="hero-side-copy">
-            Wandering Wine Co. creates thoughtful wine experiences around local tables,
-            interesting bottles, and people who are curious enough to try them.
+        <div className="hero-brand">
+          <WWCLogo />
+          <p>
+            Wandering Wine Co. started as a way to put good bottles, good food,
+            and curious people in the same room.
           </p>
-          <span className="hashtag">#uncorksomethingnew</span>
+          <span>#uncorksomethingnew</span>
         </div>
       </section>
 
-      <section className="about section" id="about">
-        <div className="section-index">01</div>
-        <div className="section-body split">
-          <div>
-            <p className="eyebrow">What it is</p>
-            <h2>Good wine without making it weird.</h2>
-          </div>
-          <div className="prose">
+      <section className="about" id="about">
+        <p className="eyebrow">The idea</p>
+        <div className="about-grid">
+          <h2>Good wine without making it weird.</h2>
+          <div className="copy">
             <p>
-              Wandering Wine Co. started in San Antonio as a way to connect local
-              restaurants, wine professionals, and guests around something simple:
-              trying bottles worth talking about.
+              WWC brought San Antonio restaurants, wine professionals, and guests
+              together around bottles worth trying.
             </p>
             <p>
-              The point was never to make wine feel exclusive. It was to make discovery
-              feel easy, thoughtful, and tied to a place worth being.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="events section" id="events">
-        <div className="section-index">02</div>
-        <div className="section-body">
-          <div className="section-heading">
-            <p className="eyebrow">A few things we did</p>
-            <h2>Past events.</h2>
-          </div>
-
-          <div className="event-list">
-            {events.map((event) => (
-              <article className="event-row" key={event.title}>
-                <span className="event-year">{event.year}</span>
-                <div className="event-main">
-                  <h3>{event.title}</h3>
-                  <p className="event-place">{event.place}</p>
-                </div>
-                <p className="event-detail">{event.detail}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="philosophy section">
-        <div className="section-index">03</div>
-        <div className="section-body split">
-          <div>
-            <p className="eyebrow">The general idea</p>
-            <h2>Know enough to care. Not enough to be annoying about it.</h2>
-          </div>
-          <div className="prose compact">
-            <p>
-              Wine has regions, grapes, producers, chemistry, weather, history, service,
-              pricing, and a frankly unreasonable amount of terminology.
+              There is plenty to know about wine. Regions. Grapes. Weather.
+              Chemistry. History. An unreasonable amount of vocabulary.
             </p>
             <p>
-              That stuff matters. It just does not have to be the first thing between
-              you and a glass you like.
+              It matters. It just does not have to get between you and a glass you like.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="contact section" id="contact">
-        <div className="section-index">04</div>
-        <div className="section-body contact-grid">
-          <div>
-            <p className="eyebrow">Contact</p>
-            <h2>Still here.</h2>
-          </div>
+      <section className="events" id="events">
+        <div className="events-heading">
+          <p className="eyebrow">A few things we did</p>
+          <h2>Three nights.<br />Different bottles.</h2>
+        </div>
 
-          <div className="contact-card">
-            <p>
-              If you found your way here from an old event, a bottle, Yelp, or somewhere
-              else on the internet — hi.
-            </p>
-            <a href="mailto:wanderingwinecompany@gmail.com">
-              wanderingwinecompany@gmail.com
-            </a>
-            <p className="fine-print">
-              San Antonio, Texas · 21+ · Please enjoy responsibly.
-            </p>
+        <div className="event-grid">
+          {events.map((event) => (
+            <article className={"event-card " + event.key} key={event.title}>
+              <div className="event-top">
+                <span>{event.date}</span>
+                <span>WWC</span>
+              </div>
+              <div className="event-copy">
+                <p className="event-meta">{event.meta}</p>
+                <h3>{event.title}</h3>
+                <p className="event-place">{event.place}</p>
+                <p className="event-note">{event.note}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="contact" id="contact">
+        <div>
+          <p className="eyebrow">Contact</p>
+          <h2>Still here.</h2>
+        </div>
+        <div className="contact-copy">
+          <p>
+            Found your way here from an old event, Yelp, a wine review, or a very
+            determined Google search? Hi.
+          </p>
+          <a className="email" href="mailto:wanderingwinecompany@gmail.com">
+            wanderingwinecompany@gmail.com
+          </a>
+          <div className="socials">
+            <a href="https://www.instagram.com/wanderingwinecompany/" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="https://www.facebook.com/WanderingWineCompany" target="_blank" rel="noreferrer">Facebook</a>
+            <a href="https://www.linkedin.com/company/wanderingwinecompany" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://www.vivino.com/users/wanderingwinecompany" target="_blank" rel="noreferrer">Vivino</a>
           </div>
         </div>
       </section>
 
       <footer>
-        <span>Wandering Wine Co.</span>
-        <span>San Antonio, Texas</span>
-        <span>#uncorksomethingnew</span>
+        <span>Wandering Wine Co. · San Antonio, Texas</span>
+        <span>21+ · Please enjoy responsibly.</span>
       </footer>
     </main>
   );
