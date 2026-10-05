@@ -62,43 +62,45 @@ export default function Home() {
           <WWCLogo compact />
           <span>Wandering Wine Co.</span>
         </a>
-
         <nav aria-label="Primary navigation">
           <a href="#about">About</a>
-          <a href="#events">Large-scale events</a>
+          <a href="#events">Past events</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
 
       <section className="hero" id="top">
-        <div className="hero-copy">
-          <p className="eyebrow">San Antonio, Texas</p>
+        <div className="hero-main">
           <h1>Wine.<br />Food.<br />People.</h1>
-
-          <p className="descriptor">
-            WWC brought San Antonio restaurants, wine professionals, and guests
-            together around bottles worth trying.
-          </p>
+          <p className="location">San Antonio, Texas</p>
         </div>
 
-        <div className="hero-brand">
+        <div className="hero-side">
           <WWCLogo />
-          <p>Good bottles and curious people.</p>
+          <p className="hero-line">Good bottles and curious people.</p>
           <span>#uncorksomethingnew</span>
         </div>
       </section>
 
       <section className="about" id="about">
-        <p>
-          There is plenty to know about wine with an unreasonable amount of
-          vocabulary. It matters. It just does not have to get between you and a
-          glass you like.
-        </p>
+        <p className="eyebrow">Wandering Wine Co.</p>
+        <div className="about-grid">
+          <p className="lead">
+            WWC brought San Antonio restaurants, wine professionals, and guests
+            together around bottles worth trying.
+          </p>
+
+          <div className="copy">
+            <p>There is plenty to know about wine.</p>
+            <p>And an unreasonable amount of vocabulary.</p>
+            <p>It matters. It just does not have to get between you and a glass you like.</p>
+          </div>
+        </div>
       </section>
 
       <section className="events" id="events">
         <div className="events-heading">
-          <p className="eyebrow">Large-scale events</p>
+          <p className="eyebrow">Past events</p>
         </div>
 
         <div className="event-grid">
@@ -121,7 +123,8 @@ export default function Home() {
       <section className="contact" id="contact">
         <div>
           <p className="eyebrow">Contact</p>
-          <h2>Contact</h2>
+          <h2>Found your way here?</h2>
+          <p className="hi">Hi.</p>
         </div>
 
         <div className="contact-copy">
