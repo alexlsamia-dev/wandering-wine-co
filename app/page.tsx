@@ -27,29 +27,11 @@ const socialLinks = [
 
 function CircleLogo({ compact = false }: { compact?: boolean }) {
   return (
-    <svg
+    <img
       className={compact ? "circle-logo circle-logo-compact" : "circle-logo"}
-      viewBox="0 0 200 200"
-      role="img"
-      aria-label="Wandering Wine Co."
-    >
-      <circle cx="100" cy="100" r="94" fill="none" stroke="currentColor" strokeWidth="4" />
-      <path
-        d="M88 37h24v28l9 11v78c0 7-6 13-13 13H92c-7 0-13-6-13-13V76l9-11V37Z"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinejoin="round"
-      />
-      <path
-        d="m80 92 21-20 20 20M80 122l16-15 23 22-17 16 14 14"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+      src="/wwc-logo-clean.svg"
+      alt="Wandering Wine Co."
+    />
   );
 }
 
