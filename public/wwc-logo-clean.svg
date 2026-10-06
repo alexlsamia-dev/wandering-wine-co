@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" aria-labelledby="title">
+  <title id="title">Wandering Wine Co.</title>
+  <g fill="none" stroke="#412606" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="250" cy="250" r="228"/>
+    <path d="M215 82h70v76c0 11 4 20 12 28l18 18v218c0 15-12 27-27 27h-76c-15 0-27-12-27-27V204l18-18c8-8 12-17 12-28V82Z"/>
+    <path d="M213 197c-25 0-44 20-44 45v180c0 18 14 32 32 32h89"/>
+    <path d="M287 197c25 0 44 20 44 45v180c0 18-14 32-32 32h-11"/>
+    <path d="M256 200 205 251l61 61-74 74 92 92"/>
+    <path d="M298 220v50"/>
+    <path d="M281 283v64"/>
+    <path d="M299 335v76"/>
+    <path d="M265 350v54"/>
+  </g>
+</svg>
